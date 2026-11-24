@@ -9,13 +9,13 @@ https://docs.djangoproject.com/en/6.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DEBUG = os.environ.get("DJANGO_DEBUG", "True") == "True"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
@@ -23,9 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "h1_wiuu2ny1^9zjlc^2)7pk(dum*$xc#76bnms6%bz(f(oqfdz"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ["MyStudentManagement.pythonanywhere.com"]
+ALLOWED_HOSTS = ["MyStudentManagement.pythonanywhere.com",'127.0.0.1', 'localhost']
+
+
+# Needed for login/forms to work over HTTPS on the live site (Django 4+).
+CSRF_TRUSTED_ORIGINS = [
+    "https://mystudentmanagement.pythonanywhere.com",
+]
+
+# Extra protection that only applies on the live site.
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
 
 
 # Application definition
@@ -123,11 +134,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    "default": {
-        "BACKEND": "django.core.mail.backends.console.EmailBackend",
-    },
-}
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "dashboard"

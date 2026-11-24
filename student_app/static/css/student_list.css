@@ -92,7 +92,9 @@
     h1 {
         font-size: 2.2rem;
     }
-
+    .table-container table{
+        width: 80%;
+    }
     th, td {
         padding: 12px;
         font-size: 14px;

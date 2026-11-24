@@ -110,8 +110,11 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+    .login-container{
+        width: 80%;
+    }
     .login-container h1{
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
     .login-container .subtitle{
         font-size: 0.8rem;
