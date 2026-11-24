@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/create_student.css' %}">
+
+<h1>Add Student</h1>
+<div class="card">
+    <form method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+</div>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

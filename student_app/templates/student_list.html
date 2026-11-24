@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+All Students
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/student_list.css' %}">
+
+<h1>All Students</h1>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th colspan="3">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td><a href="{% url 'student_details' student.pk %}" id="details-link">Details</a></td>
+                {% if user.is_staff %}
+                <td><a href="{% url 'update_student' student.pk %}" id="update-link">Update</a></td>
+                <td>
+                    <form method="post" action="{% url 'delete_student' student.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" id="delete-link">Delete</button>
+                    </form>
+                </td>
+                {% endif %}
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">No Student.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<form method="get" class="search-form">
+    <div>{{ search_form }}</div>
+    <button type="submit">Search</button>
+</form>
+
+<div class="back-link"><a href="{% url 'dashboard' %}">Back to Dashboard</a></div>
+
+{% endblock %}

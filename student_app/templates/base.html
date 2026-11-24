@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/message.css' %}">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    {% include 'messages.html' %}
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/message.js' %}"></script>
+</body>
+</html>

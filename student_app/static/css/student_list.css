@@ -1,0 +1,140 @@
+   body{
+        background-color: black;
+        position: relative;
+    }
+    h1{
+        color: green;
+        font-size: 3rem;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .table-container{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        color: whitesmoke;
+    }
+    table{
+        border: 2px solid white;
+        border-collapse: collapse;
+      
+    }
+    th{
+        color: cyan;
+    }
+    th,td{
+        border: 2px solid white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #details-link,#update-link,#home-link{
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    #details-link{
+        color: palevioletred;
+    }
+
+    #update-link{
+        color: greenyellow;
+    }
+
+   #delete-link {
+    background-color: red;
+    color: whitesmoke;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    }
+
+    #delete-link:hover{
+        background-color: orangered;
+        transform: scale(0.95);
+    }
+
+    .back-link a{
+        color: orange;
+        font-size: 1.3rem;
+        margin: 20px 10px;
+    }
+
+    #details-link:hover,#update-link:hover,.back-link a:hover{
+        text-decoration: underline;
+        color: blueviolet;
+    }
+
+    .search-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    }
+
+    .search-form input {
+        margin-left: 5px;
+        padding: 10px;
+        width: 300px;
+    }
+
+    .search-form button {
+        padding: 10px 20px;
+    }
+
+    /* Tablet devices */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .search-form input {
+        width: 80%;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .back-link a{
+        font-size: 0.8rem;
+    }
+
+    #delete-link {
+        padding: 7px 10px;
+        font-size: 8px;
+    }
+
+    .search-form input {
+        width: 50%;
+        font-size: 10px;
+    }
+
+    .search-form button {
+        padding: 8px 15px;
+        font-size: 0.5rem;
+        margin-bottom: 10px;
+    }
+}

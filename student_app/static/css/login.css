@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #101820, #1b2838);
+    color: white;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 90%;
+    max-width: 420px;
+    padding: 35px;
+    background-color: #202d3b;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.login-container .subtitle {
+    color: #bdc3c7;
+    margin-bottom: 25px;
+}
+
+/* {{ form.as_p }} renders each field as <p><label>..</label><input></p> */
+.login-container form p {
+    text-align: left;
+    margin: 0 0 20px;
+}
+
+.login-container form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ecf0f1;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="password"],
+.login-container form input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #526477;
+    border-radius: 6px;
+    background-color: #34495e;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.login-container form input:focus {
+    border-color: #2ecc71;
+}
+
+/* Validation errors and help text from Django */
+.login-container .errorlist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px;
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+.login-container .helptext {
+    display: block;
+    margin-top: 6px;
+    color: #bdc3c7;
+    font-size: 13px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #27ae60;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #219150;
+}
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: #2ecc71;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+    .login-container h1{
+        font-size: 1.7rem;
+    }
+    .login-container .subtitle{
+        font-size: 0.8rem;
+    }
+    .login-container button{
+        font-size: 12px;
+    }
+    .back-link a{
+        font-size: 12px;
+    }
+}

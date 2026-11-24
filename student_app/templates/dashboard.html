@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+<div class="dashboard-container">
+    <h1>Welcome</h1>
+    <p>You are logged in as <strong>{{ request.user.username }}</strong></p>
+
+    {% if is_admin %}
+        <h2>Admin Dashboard</h2>
+        <a href="{% url 'create_student' %}">Add Student</a>
+        <a href="{% url 'students' %}">View Students</a>
+        <a href="{% url 'api-students-list' %}">Students API</a>
+    {% else %}
+        <h2>User Dashboard</h2>
+        <a href="{% url 'students' %}">View Students</a>
+    {% endif %}
+
+    <form method="post" action="{% url 'logout' %}" class="logout-form">
+        {% csrf_token %}
+        <button type="submit">Sign Out</button>
+    </form>
+</div>
+{% endblock %}

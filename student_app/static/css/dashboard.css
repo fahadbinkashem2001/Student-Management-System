@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+    background-image: url("../images/home.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+.dashboard-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.dashboard-container h1 {
+    color: #2ecc71;
+    margin: 10px;
+}
+
+.dashboard-container h2 {
+    color: #ecf0f1;
+    margin-top: 30px;
+}
+
+.dashboard-container strong {
+    color: #2ecc71;
+}
+
+/* Normal links */
+.dashboard-container a {
+    display: inline-block;
+    margin: 8px 12px;
+    color: #2ecc71;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.dashboard-container a:hover {
+    text-decoration: underline;
+}
+
+/* Sign Out button: fixed to the bottom right corner */
+.logout-form {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    margin: 0;
+}
+
+.logout-form button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e74c3c;
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-form button:hover {
+    background-color: #c0392b;
+}
+
+@media screen and (max-width: 480px){
+
+    .dashboard-container h2 {
+        font-size: 18px;
+    }
+    .dashboard-container a{
+        font-size: 12px;
+    }
+    .logout-form button{
+        font-size: 10px;
+    }
+}

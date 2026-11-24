@@ -1,0 +1,13 @@
+    .success-message {
+        width: 400px;
+        color: whitesmoke;
+        background-color: green;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid whitesmoke;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }

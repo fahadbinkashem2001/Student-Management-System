@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Student Details
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/student_details.css' %}">
+<h1>Student Details</h1>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>GPA</th>
+                <th>Department</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>{{ student.pk }}</strong></td>
+                <td><strong>{{ student.name }}</strong></td>
+                <td><strong>{{ student.email }}</strong></td>
+                <td><strong>{{ student.gpa }}</strong></td>
+                <td><strong>{{ student.department }}</strong></td>
+                <td><strong>{{ student.phone_number }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="back-link"><a href="/students/">Back to Student List</a></div>
+{% endblock %}
