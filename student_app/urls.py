@@ -1,11 +1,12 @@
 from django.urls import path,include
-from .views import home,dashboard,registration,create_student,student_list,student_details,update_student,delete_student,signin,signout,StudentViewSet
+from .views import home,credentials,dashboard,registration,create_student,student_list,student_details,update_student,delete_student,signin,signout,StudentViewSet
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register("students",StudentViewSet,basename="api-students")
 
 urlpatterns = [
     path("",home,name="home"),
+    path("credentials/",credentials,name="credentials"),
     path("dashboard/",dashboard,name="dashboard"),
     path("registration/",registration,name="registration"),
     path("login/",signin,name="login"),

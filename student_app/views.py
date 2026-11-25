@@ -33,6 +33,9 @@ def is_user(user):
 def home(request):
     return render(request,"index.html")
 
+def credentials(request):
+    return render(request,"credentials.html")
+
 @login_required
 def dashboard(request):
     context = {
@@ -129,8 +132,6 @@ def delete_student(request,pk):
     student.delete()
     messages.success(request, "Student Deleted Successfully.")
     return redirect("students")
-
-
 
 class StudentViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]

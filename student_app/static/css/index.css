@@ -90,6 +90,15 @@ button:hover {
     text-decoration: underline;
 }
 
+.test{
+    text-decoration: none;
+    color: wheat;
+}
+
+.test:hover{
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 480px){
     .login-container{
         width: 70%;
@@ -104,6 +113,9 @@ button:hover {
         width: 80%;
     }
     button{
+        font-size: 12px;
+    }
+    .test{
         font-size: 12px;
     }
 }
